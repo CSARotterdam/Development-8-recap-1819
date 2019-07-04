@@ -12,7 +12,7 @@ let functie_die_functie_accepteerd (functie_van_int_naar_string : int -> string)
     functie_van_int_naar_string cijfer
 
 let rec recursive_functie (nummer : int) (keer : int) = //recursieve keersom
-    if keer <= 0 then
+    if keer > 0 then
         nummer + (recursive_functie nummer (keer-1))
     else 0
 

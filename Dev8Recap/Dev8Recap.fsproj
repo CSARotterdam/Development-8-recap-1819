@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Dev8Recap\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Validation.fs" />
+    <Compile Include="fsharpsyntax.fs" />
+    <Compile Include="Livecoding_template.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+</Project>
