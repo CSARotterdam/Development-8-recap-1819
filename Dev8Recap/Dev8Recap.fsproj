@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <Compile Include="Validation.fs" />
+    <Compile Include="Oplossingen_livecoding.fs" />
     <Compile Include="fsharpsyntax.fs" />
     <Compile Include="Livecoding_template.fs" />
     <Compile Include="Program.fs" />
