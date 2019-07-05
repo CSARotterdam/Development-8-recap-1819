@@ -22,8 +22,7 @@ let rec append_korter (list1 : List<'a>) (list2 : List<'a>) =
     | [] -> list2
     | head :: tail -> head :: append tail list2
     
-let test2 = ValidateAppend append
-let test2_1 = ValidateAppend append_korter
+let test2 = ValidateAppend append + "\nKorte versie: " + ValidateAppend append_korter
 
 
 let rec last (l : List<'a>) : Option<'a> =

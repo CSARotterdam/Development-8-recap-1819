@@ -22,7 +22,7 @@ let ValidateAppend (appendfunc : List<'a> -> List<'a> -> List<'a>) : string =
 let ValidateLast (lastFunc : List<'a> -> Option<'a>) : string =
     let noneworks = lastFunc [] = None
     let normalworks = lastFunc [1;2;3;4;5] = Some 5
-    Assert (noneworks && normalworks) "append works correctly" "append is not working"
+    Assert (noneworks && normalworks) "last works correctly" "append is not working"
 
 let ValidateZip (zipFunc : List<'a> -> List<'b> -> Option<List<'a*'b>>) : string =
     let twoempty = zipFunc [] [] = Some []
