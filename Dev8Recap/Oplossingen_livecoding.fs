@@ -17,7 +17,13 @@ let rec append (list1 : List<'a>) (list2:List<'a>) : List<'a> =
         | head :: tail -> head :: (append [] tail)
         | [] -> []
 
+let rec append_korter (list1 : List<'a>) (list2 : List<'a>) =
+    match list1 with
+    | [] -> list2
+    | head :: tail -> head :: append tail list2
+    
 let test2 = ValidateAppend append
+let test2_1 = ValidateAppend append_korter
 
 
 let rec last (l : List<'a>) : Option<'a> =

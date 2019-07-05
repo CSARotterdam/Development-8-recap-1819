@@ -8,6 +8,9 @@ let functie_met_types (argument1 : int) (argument2 : int) = argument1 + argument
 
 let functie_met_return (argument1 : int) (argument2 : int) : int = argument1 + argument2
 
+let infinityandbeyond =
+    fun (x :int) -> x * 2
+
 let functie_die_functie_accepteerd (functie_van_int_naar_string : int -> string) (cijfer : int) : string =
     functie_van_int_naar_string cijfer
 
@@ -34,10 +37,16 @@ let eerste_deel,tweede_deel = tuple2
 let option = Some "er is een waarde"
 let option_leeg = None
 
-type voorbeeldtype =
-    | Mogelijkheid1 //zonder waarde
-    | Mogelijkheid2 of int //met een waarde int
-    | Mogelijkheid3 of string*int //met tuple waarde
+type eenvoorbeeldtype =
+    | Eenmogelijkheid
+    | Nogeenmogelijkheid
+    | MogelijkheidMetwaarde of int
+    | NogEentje of int
+    | VanTuple of int*string
+
+type Option<'a>=
+    | Some of 'a
+    | None
 
 type typemetgenerics<'generic, 'anderegeneric>=
     | Iets of 'generic
@@ -58,6 +67,13 @@ type voorbeeldrecord2<'a> = {
 let voorbeeldgeneric = {eenveld="iets"; genericveld=5682}
 let voorbeeldgeneric2 = {eenveld="iets"; genericveld="hoi"}
 let voorbeeldgeneric3 = {eenveld="iets"; genericveld=[45;678;432]}
+
+let x = {voorbeeldgeneric with eenveld="nieuw"} //copy voorbeeldgeneric, maar verander eenveld
+
+type voorbeeldtype =
+    | Mogelijkheid1 //zonder waarde
+    | Mogelijkheid2 of int //met een waarde int
+    | Mogelijkheid3 of string*int //met tuple waarde
 
 let matchvoorbeeld (arg1 : voorbeeldtype) : Option<string*int> =
     match arg1 with
@@ -103,3 +119,11 @@ let plus2 arg = arg+2
 let plus2_dan_keer10 = plus2 >> keer10
 let keer10_dan_plus2 = keer10 >> plus2
 let keer10_dan_plus2_zelfde arg = keer10 >> plus2 <| arg
+
+let voorbeeeld nummer =
+    nummer |>
+    keer10 |>
+    plus2
+
+
+
