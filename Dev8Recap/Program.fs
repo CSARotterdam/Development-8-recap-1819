@@ -1,7 +1,7 @@
 ﻿// Learn more about F# at http://fsharp.org
 
 open System
-open Livecoding_template
+open Oplossingen_livecoding
 
 [<EntryPoint>]
 let main argv =
